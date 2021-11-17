@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 2075721501}
   - component: {fileID: 2075721500}
   - component: {fileID: 2075721499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,6 +619,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxspeed: 8
+  normalSpeed: 10
+  sprintSpeed: 20
+  groundChecker: {fileID: 2122012886}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpForce: 300
+  maxSprint: 5
 --- !u!136 &2095847909
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -712,7 +720,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &2122012886
 GameObject:
@@ -738,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122012886}
   m_LocalRotation: {x: -0.0050486876, y: -0.73695254, z: -0.03043211, w: -0.6752402}
-  m_LocalPosition: {x: 0.37114, y: -0.70705676, z: -0.5960195}
+  m_LocalPosition: {x: 0.434, y: -1.018, z: -0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2095847912}
