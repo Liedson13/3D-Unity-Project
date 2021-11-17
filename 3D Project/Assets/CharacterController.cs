@@ -10,8 +10,20 @@ public class CharacterController : MonoBehaviour
     GameObject cam;
     Rigidbody myRigidbody;
 
+    bool IsOnGround;
+    public GameObject groundChecker;
+    public LayerMask groundLayer;
+
+    float rotationSpeed = 2.0f;
+    float camRotationSpeed = 1.5f;
+
     void Start()
     {
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+
+
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
     }
