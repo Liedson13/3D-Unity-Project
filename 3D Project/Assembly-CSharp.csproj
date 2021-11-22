@@ -54,6 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\CharacterController.cs" />
+    <Compile Include="Assets\MovingDoor.cs" />
+    <Compile Include="Assets\DoorSensor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
