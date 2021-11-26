@@ -24,12 +24,16 @@ public class CharacterController : MonoBehaviour
     public float maxSprint = 5.0f;
     float sprintTimer;
 
+    Animator myAnim;
     void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
+
+        
 
         Cursor.lockState = CursorLockMode.Locked;
 
-
+        sprintTimer = maxSprint;
 
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
@@ -58,9 +62,14 @@ public class CharacterController : MonoBehaviour
         sprintTimer = Mathf.Clamp(sprintTimer, 0.0f, maxSprint);
 
         Vector3 newVelocity = (transform.forward * Input.GetAxis("Vertical") * maxspeed) + (transform.right * Input.GetAxis("Horizontal") * maxspeed);
-        myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
 
-        Debug.Log(Input.GetAxis("Vertical"));
+        myAnim.SetFloat("Speed", newVelocity.magnitude);
+
+        myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z); 
+
+
+
+        //Debug.Log(Input.GetAxis("Vertical"));
 
         rotation = rotation + Input.GetAxis("Mouse X");
         transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotation, 0.0f));
